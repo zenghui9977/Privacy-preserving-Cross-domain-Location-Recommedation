@@ -8,6 +8,8 @@ from CCMF import *
 PROCESS_DATA_FOLDER = 'process_data/Foursquare/'
 
 # 获取目标域数据
+if not os.path.exists(PROCESS_DATA_FOLDER + 'item_aliases_dict.npy'):
+    raise Exception('请先运行stage1.py')
 item_aliases_list = read_from_pkl(PROCESS_DATA_FOLDER, 'item_aliases_list.pkl')
 user_item_num = read_from_pkl(PROCESS_DATA_FOLDER, 'user-item_num.pkl')
 
